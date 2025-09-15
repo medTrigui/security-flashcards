@@ -1,0 +1,25 @@
+        {
+            id: "cloud_11",
+            question: "What's the difference between encryption at rest and encryption in transit?",
+            answer: "Encryption at rest protects data stored on physical media (disks, databases, backups) using algorithms like AES-256, ensuring data remains protected if storage devices are compromised. Encryption in transit protects data moving between systems using protocols like TLS/SSL, preventing interception during network transmission. Both are essential for comprehensive data protection: at-rest encryption protects against physical theft and insider threats, while in-transit encryption protects against network eavesdropping and man-in-the-middle attacks."
+        },
+        {
+            id: "cloud_12",
+            question: "How do you encrypt an S3 bucket?",
+            answer: "Enable default encryption on the S3 bucket using either SSE-S3 (Amazon-managed keys), SSE-KMS (AWS KMS customer-managed keys), or SSE-C (customer-provided keys). Configure bucket policies to deny uploads of unencrypted objects using condition statements, and enable bucket versioning and MFA delete for additional protection. Use AWS KMS for more control over key management, rotation, and access policies, and consider client-side encryption for highly sensitive data where you maintain complete control over the encryption process."
+        },
+        {
+            id: "cloud_13",
+            question: "What's KMS (Key Management Service) and how is it used?",
+            answer: "AWS KMS is a managed service that creates and controls encryption keys, providing centralized key management with hardware security modules (HSMs) for key protection. KMS integrates with AWS services for automatic encryption, supports key rotation, and provides detailed audit logs of key usage. Keys can be customer-managed (CMKs) for full control or AWS-managed for simplicity, with policies controlling who can use keys for encryption/decryption operations and administrative access to manage the keys themselves."
+        },
+        {
+            id: "cloud_14",
+            question: "How would you securely store secrets (API keys, passwords) in AWS?",
+            answer: "Use AWS Secrets Manager for automatic rotation of secrets like database passwords and API keys, or AWS Systems Manager Parameter Store for static configuration values and secrets. Both services encrypt secrets at rest using KMS and provide access control through IAM policies. Implement least privilege access, enable logging and monitoring of secret access, and use VPC endpoints to keep traffic within AWS network. Never hardcode secrets in application code or configuration files stored in version control."
+        },
+        {
+            id: "cloud_15",
+            question: "What's the difference between AWS Secrets Manager and SSM Parameter Store?",
+            answer: "Secrets Manager is purpose-built for secrets with automatic rotation capabilities, cross-region replication, and fine-grained access control, but costs more per secret. Parameter Store is more cost-effective for configuration data and simple secrets, offers hierarchical organization with parameter paths, but requires manual setup for rotation. Secrets Manager is ideal for database credentials and API keys requiring rotation, while Parameter Store suits application configuration, feature flags, and secrets that don't need automatic rotation."
+        }

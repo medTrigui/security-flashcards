@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security Domain Flash Cards</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Security Domain Flash Cards</h1>
+            <p>Master cybersecurity concepts across 6 key domains</p>
+        </header>
+
+        <nav class="category-nav">
+            <button class="category-btn active" data-category="networking">Networking</button>
+            <button class="category-btn" data-category="systems">Systems</button>
+            <button class="category-btn" data-category="cloud">Cloud</button>
+            <button class="category-btn" data-category="applications">Applications</button>
+            <button class="category-btn" data-category="security-operations">Security Operations</button>
+            <button class="category-btn" data-category="automation">Automation</button>
+        </nav>
+
+        <div class="flashcard-container">
+            <div class="progress-bar">
+                <div class="progress-fill"></div>
+                <span class="progress-text">Card <span id="current-card">1</span> of <span id="total-cards">50</span></span>
+            </div>
+
+            <div class="flashcard" id="flashcard">
+                <div class="flashcard-inner">
+                    <div class="flashcard-front">
+                        <div class="question-text" id="question-text">
+                            Click a category to start learning!
+                        </div>
+                        <div class="flip-hint">Click to reveal answer</div>
+                    </div>
+                    <div class="flashcard-back">
+                        <div class="answer-text" id="answer-text">
+                            Answer will appear here
+                        </div>
+                        <div class="flip-hint">Click to see question</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="controls">
+                <button id="prev-btn" class="control-btn" disabled>Previous</button>
+                <button id="next-btn" class="control-btn">Next</button>
+            </div>
+
+            <div class="shuffle-controls">
+                <button id="shuffle-btn" class="shuffle-btn">Shuffle Cards</button>
+                <button id="reset-btn" class="reset-btn">Reset Progress</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="flashcards-data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
